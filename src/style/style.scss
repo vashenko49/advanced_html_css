@@ -1,32 +1,29 @@
 @import "reset";
 @import "font";
 
+.gogo{
+  width: 980px;
+}
 
+.container{
+  min-width: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .header{
   background-color: #373c3f;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   &__title{
     font-family: Montserrat,sans-serif;
     font-size: 12px;
-    color: #ffffff;
     margin-left: 19px;
-  }
-
-  &__menu{
-    li{
-      display: none;
-      padding: 42px 26px;
-    }
-  }
-
-  &__title, &__menu{
     color: #ebebeb;
   }
-
 
   &__logo{
     display: none;
@@ -42,7 +39,7 @@
   position: relative;
 
   span{
-    width: 16px;
+    width: 18px;
     height: 2px;
     background-color: #ffffff;
     top:50%;
@@ -84,15 +81,20 @@
   & input:checked ~ span:last-of-type {
     transform: rotate(45deg) translate(-50%, -50%);
   }
+
+  & input:checked ~ .dropDownMenu {
+    right: 0;
+    display: block;
+  }
 }
 
 .home {
-  background: url("../img/mobile_version/header-fon copy 3.png");
+  background: url("../img/mobile_version/header-fon copy 3.png") / cover;
   -webkit-background-size: cover;
   background-size: cover;
   height: 148px;
   padding: 11px 19px;
-
+  box-sizing: border-box;
 
   &__title, &__link {
     font-weight: bold;
@@ -113,6 +115,29 @@
 
 }
 
+.dropDownMenu{
+  display: none;
+  width: 182px;
+  position: absolute;
+  background-color: #fafafa;
+  top: 41px;
+  transition: right .3s linear;
+  right: -182px;
+  &__item{
+    color: #444;
+    text-decoration: none;
+    font-size: 12px;
+    border-bottom: 2px solid #f3f3f3;
+    padding-left: 13px;
+    line-height: 2.48;
+    display: block;
+    font-family: Lato, sans-serif;
+    &:hover{
+      background-color: #f5f5f5;
+    }
+  }
+}
+
 .gallery{
   margin-top: 5px;
 
@@ -123,17 +148,19 @@
     align-items: center;
     margin-bottom: 2px;
 
+
     &-pizza{
-      background:url("../img/mobile_version/Shape 2 copy 5.png");
+      background:url("../img/mobile_version/Shape 2 copy 5.png") no-repeat / cover;
     }
 
     &-salads{
-      background: url("../img/mobile_version/UA_UX Salads fon copy 3.png");
+      background: url("../img/mobile_version/UA_UX Salads fon copy 3.png") no-repeat / cover;
     }
 
     &-desserts{
-      background: url("../img/mobile_version/Desserts fon copy 3.png");
+      background: url("../img/mobile_version/Desserts fon copy 3.png") no-repeat / cover;
     }
+
   }
 
   &__title{
@@ -309,4 +336,229 @@
   padding: 11px;
   font-size: 12px;
   font-family: Montserrat,sans-serif;
+}
+
+
+@media screen and (min-width: 450px) and (max-width: 640px){
+  .header {
+    &__title {
+      font-size: 24px;
+      margin-left: 38px;
+    }
+  }
+  .burger{
+    width: 81px;
+    height: 81px;
+    span{
+      width: 31px;
+      height: 4px;
+    }
+  }
+  .dropDownMenu{
+    width: 243px;
+    right: -243px;
+    top: 81px;
+    &__item{
+      font-size: 14px;
+      padding-left: 27px;
+      line-height: 2.8;
+    }
+  }
+  .home{
+    background: url("../img/tablet_version/header-fon copy 2.png");
+    height: 344px;
+    padding: 24px 40px;
+
+    &__title {
+      color: #ffffff;
+      font-size: 36px;
+      line-height: 1.2;
+    }
+
+    &__link {
+      color: #a6d6e0;
+      font-size: 24px;
+      text-decoration: none;
+      line-height: 2;
+    }
+  }
+  .gallery {
+    &__item {
+      margin-bottom: 3px;
+      &-pizza {
+        background: url("../img/tablet_version/Pizza delivery fon copy 2.png") no-repeat / cover;
+      }
+
+      &-salads {
+        background: url("../img/tablet_version/UA_UX Salads fon copy 2.png") no-repeat / cover;
+      }
+
+      &-desserts {
+        background: url("../img/tablet_version/Desserts fon copy 2.png") no-repeat / cover;
+      }
+
+    }
+    &__description{
+      font-size: 36px;
+    }
+    &__title{
+      width: calc(100% - 142px);
+    }
+    &__transition{
+      width: 142px;
+      height: 149px;
+
+      &:after{
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  .blockWithMenu{
+    margin-top: 40px;
+    &__slogan{
+      margin-bottom: 26px;
+    }
+    &__title{
+      font-size: 40px;
+      margin-left:17px ;
+    }
+    &__preTitle{
+      font-size: 20px;
+    }
+  }
+  .menu{
+    margin-bottom: 44px;
+    &__container{
+      padding: 0 36px;
+    }
+    &__description{
+      font-size: 40px;
+      line-height: 1.9;
+    }
+    &__sectionName{
+      font-size: 33px;
+      letter-spacing: -1.8px;
+    }
+    &__fontAwesome:before {
+      font-size: 46px;
+      margin-right: 9px;
+    }
+  }
+  .list{
+    &__dish{
+      font-size: 25px;
+      &:before{
+        margin-right: 7px;
+      }
+    }
+    &__price{
+      font-size: 26px;
+    }
+    &__dishPrice{
+      margin-bottom: 13px;
+    }
+    &__dishDescription{
+      font-size: 17px;
+      letter-spacing: .5px;
+      line-height: 1.2;
+    }
+    &__item:not(:first-of-type) {
+      margin-top: 20px;
+    }
+    &__item:last-of-type, .menu__title {
+      margin-bottom: 8px;
+    }
+  }
+  .footer {
+    margin-top: 120px;
+    line-height: 1.7;
+    padding: 19px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 980px){
+  .header{
+    padding: 8px 29px;
+    &__title{
+      display: none;
+    }
+    &__logo{
+      display: block;
+    }
+  }
+  .burger{
+    &__touch{
+      display: none;
+    }
+    span{
+      display: none;
+    }
+    background: transparent;
+    position: static;
+
+    input:checked~.dropDownMenu {
+      display: flex;
+    }
+  }
+  .dropDownMenu{
+    display: flex;
+    position: static;
+    background: transparent;
+    width: max-content;
+    &__item{
+      border: none;
+      text-transform: uppercase;
+      padding: 0 21px 0 0;
+      font-size: 16px;
+      color: #ebebeb;
+      font-family: Montserrat, sans-serif;
+      &:hover{
+        background: transparent;
+      }
+    }
+  }
+  .home{
+    height: 528px;
+    padding: 43px 27px;
+    background:url('../img/desktop_version/header-fon.png');
+    &__title{
+      font-size: 55px;
+      line-height: 1.45;
+    }
+    &__link{
+      font-size: 34px;
+      line-height: 3;
+    }
+  }
+  .gallery{
+    display: flex;
+    &__transition{
+      display: none;
+    }
+    &__item{
+      width: calc(100% / 3);
+      height: 327px;
+      &-pizza {
+        background: url("../img/desktop_version/Pizza delivery fon.png") no-repeat / cover;
+      }
+
+      &-salads {
+        background: url("../img/desktop_version/UA_UX Salads fon.png") no-repeat / cover;
+      }
+
+      &-desserts {
+        background: url("../img/desktop_version/Desserts fon.png") no-repeat / cover;
+      }
+    }
+    &__title{
+      width: 100%;
+      text-align: center;
+    }
+    &__description{
+      font-size: 38px;
+    }
+  }
+
 }
