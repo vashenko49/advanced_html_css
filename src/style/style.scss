@@ -1,12 +1,9 @@
 @import "reset";
 @import "font";
 
-.gogo{
-  width: 980px;
-}
 
 .container{
-  min-width: 320px;
+  min-width: 300px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -17,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  box-sizing: border-box;
 
   &__title{
     font-family: Montserrat,sans-serif;
@@ -89,7 +87,7 @@
 }
 
 .home {
-  background: url("../img/mobile_version/header-fon copy 3.png") / cover;
+  background: url("../img/desktop_version/header-fon.png") / cover;
   -webkit-background-size: cover;
   background-size: cover;
   height: 148px;
@@ -150,15 +148,15 @@
 
 
     &-pizza{
-      background:url("../img/mobile_version/Shape 2 copy 5.png") no-repeat / cover;
+      background:url("../img/desktop_version/Pizza delivery fon.png") no-repeat center / cover;
     }
 
     &-salads{
-      background: url("../img/mobile_version/UA_UX Salads fon copy 3.png") no-repeat / cover;
+      background: url("../img/desktop_version/UA_UX Salads fon.png") no-repeat center / cover;
     }
 
     &-desserts{
-      background: url("../img/mobile_version/Desserts fon copy 3.png") no-repeat / cover;
+      background: url("../img/desktop_version/Desserts fon.png") no-repeat center / cover;
     }
 
   }
@@ -212,7 +210,7 @@
   &__slogan{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 14px;
   }
 
@@ -234,8 +232,8 @@
 
   &__img{
     display: none;
-    width:120px;
-    height: 98px;
+    height: 90px;
+    margin-right: 26px;
   }
 }
 
@@ -336,10 +334,17 @@
   padding: 11px;
   font-size: 12px;
   font-family: Montserrat,sans-serif;
+  position: relative;
+  &__img{
+    display: none;
+    position: absolute;
+    top: 7px;
+    left: 29px;
+  }
 }
 
 
-@media screen and (min-width: 450px) and (max-width: 640px){
+@media screen and (min-width: 480px) and (max-width: 782px){
   .header {
     &__title {
       font-size: 24px;
@@ -365,7 +370,7 @@
     }
   }
   .home{
-    background: url("../img/tablet_version/header-fon copy 2.png");
+    background: url("../img/desktop_version/header-fon.png");
     height: 344px;
     padding: 24px 40px;
 
@@ -385,16 +390,16 @@
   .gallery {
     &__item {
       margin-bottom: 3px;
-      &-pizza {
-        background: url("../img/tablet_version/Pizza delivery fon copy 2.png") no-repeat / cover;
+      &-pizza{
+        background:url("../img/desktop_version/Pizza delivery fon.png") no-repeat center / cover;
       }
 
-      &-salads {
-        background: url("../img/tablet_version/UA_UX Salads fon copy 2.png") no-repeat / cover;
+      &-salads{
+        background: url("../img/desktop_version/UA_UX Salads fon.png") no-repeat center / cover;
       }
 
-      &-desserts {
-        background: url("../img/tablet_version/Desserts fon copy 2.png") no-repeat / cover;
+      &-desserts{
+        background: url("../img/desktop_version/Desserts fon.png") no-repeat center / cover;
       }
 
     }
@@ -478,7 +483,7 @@
   }
 }
 
-@media screen and (min-width: 641px) and (max-width: 980px){
+@media screen and (min-width: 783px){
   .header{
     padding: 8px 29px;
     &__title{
@@ -534,6 +539,7 @@
   }
   .gallery{
     display: flex;
+    margin-bottom: 50px;
     &__transition{
       display: none;
     }
@@ -560,5 +566,117 @@
       font-size: 38px;
     }
   }
+  .blockWithMenu{
+    margin-top: 0;
+    &__slogan{
+      margin-bottom: 10px;
+    }
+    &__preTitle, &__title {
+      margin-left: 28px;
+    }
+    &__title{
+      font-size: 34px;
 
+    }
+    &__preTitle {
+      font-size: 20px;
+      color: #cbccce;
+    }
+    &__img{
+      display: block;
+    }
+    &__menuContainer{
+      display: flex;
+    }
+  }
+  .menu{
+    width: calc(100% / 2);
+    &__description {
+      font-size: 34px;
+      line-height: 2.2;
+    }
+    &__sectionName {
+      font-size: 25.5px;
+    }
+    &__title{
+      margin-top: 11px;
+      &:last-of-type{
+        margin-top: 20px;
+      }
+    }
+    &__fontAwesome:before {
+      font-size: 46px;
+      margin-right: 0;
+    }
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+  .list{
+    &__dish, &__price {
+      font-size: 24px;
+    }
+    &__dishDescription {
+      font-size: 15px;
+    }
+    &__item:not(:first-of-type) {
+      margin-top: 26px;
+    }
+    &__dishPrice {
+      margin-bottom: 15px;
+    }
+  }
+  .footer{
+    margin-top: 46px;
+    position: relative;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 28px;
+    line-height: 2.3;
+    &__img{
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 980px){
+    .home{
+      height: 674px;
+      &__title {
+        font-size: 62px;
+      }
+      &__link {
+        font-size: 38px;
+      }
+    }
+    .gallery{
+      &__item {
+        height: 400px;
+      }
+      &.gallery__description {
+        font-size: 43px;
+      }
+    }
+    .blockWithMenu{
+      &__title {
+        font-size: 40px;
+      }
+    }
+    .menu{
+      &__description {
+        font-size: 40px;
+      }
+      &__sectionName {
+        font-size: 30px;
+      }
+    }
+    .list{
+      &__dish, &__price {
+        font-size: 27px;
+      }
+      &__dishDescription {
+        font-size: 17.5px;
+      }
+    }
+  }
 }
