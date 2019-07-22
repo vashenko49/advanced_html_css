@@ -52,6 +52,7 @@
     height: inherit;
     z-index: 1;
     position: absolute;
+    margin: 0;
   }
   & input:checked ~ span:nth-of-type(2){
     opacity: 0;
@@ -286,6 +287,7 @@
   font-size: 12px;
   font-family: Montserrat,sans-serif;
   position: relative;
+  box-sizing: border-box;
   &__img{
     display: none;
     position: absolute;
@@ -358,9 +360,11 @@
     &__slogan{
       margin-bottom: 26px;
     }
+    &__title, &__preTitle{
+      margin-left:17px ;
+    }
     &__title{
       font-size: 40px;
-      margin-left:17px ;
     }
     &__preTitle{
       font-size: 20px;
@@ -416,7 +420,7 @@
     font-size: 18px;
   }
 }
-@media screen and (min-width: 783px){
+@media screen and (min-width: 843px){
   .header{
     padding: 8px 29px;
     &__title{
@@ -447,7 +451,7 @@
     &__item{
       border: none;
       text-transform: uppercase;
-      padding: 0 21px 0 0;
+      margin: 0 21px 0 0;
       font-size: 16px;
       color: #ebebeb;
       font-family: Montserrat, sans-serif;
@@ -556,8 +560,11 @@
     &__img{
       display: block;
     }
+    p{
+      margin-left: 7px;
+    }
   }
-  @media screen and (min-width: 980px){
+  @media screen and (min-width: 1200px){
     .home{
       height: 674px;
       &__title {
