@@ -1,13 +1,11 @@
 @import "reset";
 @import "font";
 
-
 .container{
   min-width: 300px;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .header{
   background-color: #373c3f;
   display: flex;
@@ -15,27 +13,23 @@
   align-items: center;
   position: relative;
   box-sizing: border-box;
-
   &__title{
     font-family: Montserrat,sans-serif;
     font-size: 12px;
     margin-left: 19px;
     color: #ebebeb;
   }
-
   &__logo{
     display: none;
     width: 104px;
     height: 83px;
   }
 }
-
 .burger{
   height: 41px;
   width: 41px;
   background-color: #202529;
   position: relative;
-
   span{
     width: 18px;
     height: 2px;
@@ -45,16 +39,13 @@
     transform: translate(-50%,-50%);
     position: absolute;
     transition: opacity 0.2s, transform 0.3s;
-
     &:first-of-type{
       top:40%;
     }
-
     &:last-of-type{
       top:60%;
     }
   }
-
   &__touch{
     opacity: 0;
     width: inherit;
@@ -62,57 +53,46 @@
     z-index: 1;
     position: absolute;
   }
-
   & input:checked ~ span:nth-of-type(2){
     opacity: 0;
   }
-
   & input:checked ~ span:first-of-type, & input:checked ~ span:last-of-type{
     transform-origin: left top;
     top: 50%;
   }
-
   & input:checked ~ span:first-of-type{
     transform: rotate(-45deg) translate(-50%, -50%);
   }
-
   & input:checked ~ span:last-of-type {
     transform: rotate(45deg) translate(-50%, -50%);
   }
-
   & input:checked ~ .dropDownMenu {
     right: 0;
     display: block;
   }
 }
-
 .home {
-  background: url("../img/desktop_version/header-fon.png") / cover;
+  background: url("../img/desktop_version/header-fon.png") center / cover;
   -webkit-background-size: cover;
   background-size: cover;
   height: 148px;
   padding: 11px 19px;
   box-sizing: border-box;
-
   &__title, &__link {
     font-weight: bold;
     font-family: Lato, sans-serif;
     line-height: 1.5;
   }
-
   &__title {
     color: #ffffff;
     font-size: 16px;
   }
-
   &__link {
     color: #a6d6e0;
     font-size: 14px;
     text-decoration: none;
   }
-
 }
-
 .dropDownMenu{
   display: none;
   width: 182px;
@@ -135,43 +115,33 @@
     }
   }
 }
-
 .gallery{
   margin-top: 5px;
-
   &__item{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2px;
-
-
     &-pizza{
       background:url("../img/desktop_version/Pizza delivery fon.png") no-repeat center / cover;
     }
-
     &-salads{
       background: url("../img/desktop_version/UA_UX Salads fon.png") no-repeat center / cover;
     }
-
     &-desserts{
       background: url("../img/desktop_version/Desserts fon.png") no-repeat center / cover;
     }
-
   }
-
   &__title{
     width: calc(100% - 71px);
     text-align: center;
   }
-
   &__description{
     color: white;
     font-size: 20px;
     font-family: Lato,sans-serif;
   }
-
   &__transition{
     cursor: pointer;
     display: inline-block;
@@ -180,7 +150,6 @@
     background-color: #acd8ad;
     position: relative;
     transition: background-color 0.4s;
-
     &:after{
       content: "";
       display: inline-block;
@@ -196,13 +165,11 @@
       transform: translate(-92%,-71%) rotate(45deg);
       transition: color 0.4s;
     }
-
     &:hover{
       background-color: #4AD851;
     }
   }
 }
-
 .blockWithMenu{
   margin-top: 22px;
   font-family: Lato,sans-serif;
@@ -236,34 +203,26 @@
     margin-right: 26px;
   }
 }
-
 .menu{
   margin-bottom: 30px;
-
   &__container{
     padding: 0 18px 0 18px;
   }
-
   &__description{
     text-transform: uppercase;
     font-size: 20px;
     font-family: Lato,sans-serif;
     line-height: 1.9;
     padding-left: 18px;
-
     &-bgnGray{
       color: #acd8ad;
       background-color: #3f4043;
     }
-
     &-bgnGreen{
       color: #ffffff;
       background-color: #acd8ad;
     }
-
   }
-
-
   &__title{
     display: flex;
     justify-content: space-between;
@@ -282,41 +241,34 @@
     margin-right: 4px;
   }
 }
-
 .list{
   &__item{
     &:not(:first-of-type){
       margin-top: 11px;
     }
-
     &:last-of-type{
       margin-bottom: 6px;
     }
   }
-
   &__dishPrice{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5.4px;
   }
-
   &__dish,&__price{
     color: #3f4043;
   }
-
   &__dish{
     font-size: 14px;
     &:before{
       content: "\00B7";
     }
   }
-
   &__price{
     font-weight: bold;
     font-size: 13px;
   }
-
   &__dishDescription{
     font-size: 8.5px;
     color: #3f4043;
@@ -324,7 +276,6 @@
     line-height: 1.2;
   }
 }
-
 .footer{
   color: #fff;
   background-color: #acd8ad;
@@ -342,7 +293,6 @@
     left: 29px;
   }
 }
-
 
 @media screen and (min-width: 480px) and (max-width: 782px){
   .header {
@@ -370,16 +320,13 @@
     }
   }
   .home{
-    background: url("../img/desktop_version/header-fon.png");
     height: 344px;
     padding: 24px 40px;
-
     &__title {
       color: #ffffff;
       font-size: 36px;
       line-height: 1.2;
     }
-
     &__link {
       color: #a6d6e0;
       font-size: 24px;
@@ -390,18 +337,6 @@
   .gallery {
     &__item {
       margin-bottom: 3px;
-      &-pizza{
-        background:url("../img/desktop_version/Pizza delivery fon.png") no-repeat center / cover;
-      }
-
-      &-salads{
-        background: url("../img/desktop_version/UA_UX Salads fon.png") no-repeat center / cover;
-      }
-
-      &-desserts{
-        background: url("../img/desktop_version/Desserts fon.png") no-repeat center / cover;
-      }
-
     }
     &__description{
       font-size: 36px;
@@ -412,7 +347,6 @@
     &__transition{
       width: 142px;
       height: 149px;
-
       &:after{
         width: 15px;
         height: 15px;
@@ -482,7 +416,6 @@
     font-size: 18px;
   }
 }
-
 @media screen and (min-width: 783px){
   .header{
     padding: 8px 29px;
@@ -494,15 +427,14 @@
     }
   }
   .burger{
+    background: transparent;
+    position: static;
     &__touch{
       display: none;
     }
     span{
       display: none;
     }
-    background: transparent;
-    position: static;
-
     input:checked~.dropDownMenu {
       display: flex;
     }
@@ -527,7 +459,6 @@
   .home{
     height: 528px;
     padding: 43px 27px;
-    background:url('../img/desktop_version/header-fon.png');
     &__title{
       font-size: 55px;
       line-height: 1.45;
@@ -546,17 +477,6 @@
     &__item{
       width: calc(100% / 3);
       height: 327px;
-      &-pizza {
-        background: url("../img/desktop_version/Pizza delivery fon.png") no-repeat / cover;
-      }
-
-      &-salads {
-        background: url("../img/desktop_version/UA_UX Salads fon.png") no-repeat / cover;
-      }
-
-      &-desserts {
-        background: url("../img/desktop_version/Desserts fon.png") no-repeat / cover;
-      }
     }
     &__title{
       width: 100%;
@@ -576,7 +496,6 @@
     }
     &__title{
       font-size: 34px;
-
     }
     &__preTitle {
       font-size: 20px;
@@ -638,7 +557,6 @@
       display: block;
     }
   }
-
   @media screen and (min-width: 980px){
     .home{
       height: 674px;
